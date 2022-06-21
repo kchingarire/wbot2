@@ -7,6 +7,8 @@ WAPI.waitNewMessages(false, async (data) => {
         body.type = 'message';
         body.user = message.chatId._serialized;
         //body.original = message;
+        window.log('original message',message);
+       window.log(intents.appconfig.webhook);
         if (intents.appconfig.webhook) {
             fetch(intents.appconfig.webhook, {
                 method: "POST",
